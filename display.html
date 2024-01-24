@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>view</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 10px;
+        }
+
+        p {
+            display: inline;
+        }
+
+        .griid {
+            display: flex;
+            font-size: 20px;
+        }
+
+        .left {
+            align-items: center;
+            width: 50%;
+            padding: 50px;
+        }
+
+        .right {
+            align-items: center;
+            width: 50%;
+            padding: 50px;
+        }
+
+        .last {
+            padding: 5px;
+        }
+
+        .last h4:first-of-type {
+            float: left;
+            padding-left: 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        window.addEventListener('load', () => {
+            name_ = localStorage.getItem("name");
+            rate_ = localStorage.getItem("rate");
+            sno_ = localStorage.getItem("sno");
+            village_ = localStorage.getItem("vlg")
+            gwgt_ = localStorage.getItem("gwgt");
+            commisionpercent_ = localStorage.getItem("Commission");
+            bags_ = gwgt_ / 70;
+            cuttings_ = bags_ * 1.5;
+            netweight_ = gwgt_ - cuttings_;
+            hamali_ = bags_ * 8;
+            totalamt_ = netweight_ * rate_;
+            commision_ = totalamt_ * commisionpercent_ / 100;
+            weightbridge_ = 60;
+            gumasta_ = 60;
+            totalcuttings_ = hamali_ + weightbridge_ + gumasta_ + commision_;
+            amt_ = totalamt_ - totalcuttings_;
+
+            const d = new Date();
+            const d1 = document.querySelectorAll('.demo');
+            const d2 = document.querySelectorAll('.sno');
+            const d3 = document.querySelectorAll('.rate');
+            const d4 = document.querySelectorAll('.name'); 
+            const d5 = document.querySelectorAll('.vname');
+            const d6 = document.querySelectorAll('.gwgt');
+            const d7 = document.querySelectorAll('.bags');
+            const d8 = document.querySelectorAll('.cuttings'); 
+            const d9 = document.querySelectorAll('.netweight');
+            const d10 = document.querySelectorAll('.totalamt');
+            const d11 = document.querySelectorAll('.hamali');
+            const d12 = document.querySelectorAll('.weightbridge'); 
+            const d13 = document.querySelectorAll('.gumasta');
+            const d14 = document.querySelectorAll('.commision');
+            const d15 = document.querySelectorAll('.totalcuttings');
+            const d16 = document.querySelectorAll('.amt'); 
+            d1.forEach(demo => {
+                demo.innerHTML = d;
+            });
+            d2.forEach(sno => {
+                sno.innerHTML = sno_;
+            });
+            d3.forEach(rate => {
+                rate.innerHTML = rate_ + " Rs";
+            });
+            d4.forEach(name => {
+                name.innerHTML = name_;
+            });
+            d5.forEach(vname => {
+                vname.innerHTML = village_;
+            });
+            d6.forEach(gwgt => {
+                gwgt.innerHTML = gwgt_ + " Kgs";
+            });
+            d7.forEach(bags => {
+                bags.innerHTML = bags_.toFixed(2);
+            });
+            d8.forEach(cuttings => {
+                cuttings.innerHTML = cuttings_.toFixed(2) + "kgs";
+            });
+            d9.forEach(netweight => {
+                netweight.innerHTML = netweight_.toFixed(2) + " Kgs";
+            });
+            d10.forEach(totalamt => {
+                totalamt.innerHTML = totalamt_.toFixed(2) + " Rs";
+            });
+            d11.forEach(hamali => {
+                hamali.innerHTML = hamali_.toFixed(2) + " Rs";
+            });
+            d12.forEach(weightbridge => {
+                weightbridge.innerHTML = weightbridge_ + " Rs";
+            });
+            d13.forEach(gumasta => {
+                gumasta.innerHTML = gumasta_ + " Rs";
+            });
+            d14.forEach(commision => {
+                commision.innerHTML = commision_.toFixed(2) + " Rs";
+            });
+            d15.forEach(totalcuttings => {
+                totalcuttings.innerHTML = totalcuttings_.toFixed(2) + " Rs";
+            });
+            d16.forEach(amt => {
+                amt.innerHTML = amt_.toFixed(2)+"/-" ;
+            });
+        })
+    </script>
+    <div class="container">
+
+        <h1 align="center">
+            SSSV RICE MILL</h1>
+        <h3 align="center">
+            JUVVIGUDEM</h3>
+        <h4 class="demo" align="center"></h4>
+        <table width=100%>
+            <tr>
+                <td>
+                    <h3>Sno :<p class="sno"></p><br></h3>
+                </td>
+                <td>
+                    <h3 align="right">Rate: <p class="rate"></p>
+                    </h3>
+                <td>
+            </tr>
+        </table>
+
+        
+
+        <hr>
+        <div class="griid">
+
+            <div class="left" align="left">
+                <table border="0">
+
+                    <tr>
+                        <td>Name :</td>
+                        <td>
+                            <p class="name"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Village :</td>
+                        <td>
+                            <p class="vname"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gross Weight : </td>
+                        <td>
+                            <p class="gwgt"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bags : </td>
+                        <td>
+                            <p class="bags"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cuttings : </td>
+                        <td>
+                            <p class="cuttings"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Net Weight : </td>
+                        <td>
+                            <p class="netweight"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Total amount : </td>
+                        <td>
+                            <p class="totalamt"></p><br>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="right" align="right"><br>
+                <table border="0">
+                    <tr>
+                        <td>Hamali : </td>
+                        <td>
+                            <p class="hamali"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Weigh Bridge : </td>
+                        <td>
+                            <p class="weightbridge"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gumasta : </td>
+                        <td>
+                            <p class="gumasta"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Commission : </td>
+                        <td>
+                            <p class="commision"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Total Cuttings : </td>
+                        <td>
+                            <p class="totalcuttings"></p><br>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <h3 align="center">Amount :<p class="amt"></p>
+        </h3>
+        <div class="last">
+            <h4 align="left">Incharge Signature:</h4>
+            <h4 align="right">Farmers Signature:</h4>
+        </div>
+    </div>
+    <br><br><br><br><br><br>
+    <div class="container">
+
+        <h1 align="center">
+            SSSV RICE MILL</h1>
+        <h3 align="center">
+            JUVVIGUDEM</h3>
+        <h4 class="demo" align="center"></h4>
+        <table width=100%>
+            <tr>
+                <td>
+                    <h3>Sno :<p class="sno"></p><br></h3>
+                </td>
+                <td>
+                    <h3 align="right">Rate: <p class="rate"></p>
+                    </h3>
+                <td>
+            </tr>
+        </table>
+
+        
+
+        <hr>
+        <div class="griid">
+
+            <div class="left" align="left">
+                <table border="0">
+
+                    <tr>
+                        <td>Name :</td>
+                        <td>
+                            <p class="name"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Village :</td>
+                        <td>
+                            <p class="vname"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gross Weight : </td>
+                        <td>
+                            <p class="gwgt"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Bags : </td>
+                        <td>
+                            <p class="bags"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Cuttings : </td>
+                        <td>
+                            <p class="cuttings"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Net Weight : </td>
+                        <td>
+                            <p class="netweight"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Total amount : </td>
+                        <td>
+                            <p class="totalamt"></p><br>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="right" align="right"><br>
+                <table border="0">
+                    <tr>
+                        <td>Hamali : </td>
+                        <td>
+                            <p class="hamali"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Weigh Bridge : </td>
+                        <td>
+                            <p class="weightbridge"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Gumasta : </td>
+                        <td>
+                            <p class="gumasta"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Commission : </td>
+                        <td>
+                            <p class="commision"></p><br>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Total Cuttings : </td>
+                        <td>
+                            <p class="totalcuttings"></p><br>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <h3 align="center">Amount :<p class="amt"></p>
+        </h3>
+        <div class="last">
+            <h4 align="left">Incharge Signature:</h4>
+            <h4 align="right">Farmers Signature:</h4>
+        </div>
+    </div>
+</body>
+
+</html>

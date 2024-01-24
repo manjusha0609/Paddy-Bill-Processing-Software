@@ -1,0 +1,41 @@
+.container{
+    width: 100%;
+    min-height: 100vh;
+    padding: 5%;
+    background-image: linear-gradient(rgba(21, 25, 53, 0.9),rgba(0, 8, 51, 0.815)),url(p1.jpeg);
+    background-position: center;
+    background-size: cover;
+    
+}
+ #addbtn{
+    
+    
+    border: 0;
+    border-radius: 50px;
+    font-size: 18px;
+    background: #e0e0e0bd;
+    color:black;
+    cursor: pointer;
+
+}
+#addbtn:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition: 0.3s;
+
+}
+#readbtn{
+    
+    
+    border: 0;
+    border-radius: 50px;
+    font-size: 18px;
+    background: #e0e0e0bd;
+    color:black;
+    cursor: pointer;
+
+}
+#readbtn:hover{
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    transition: 0.3s;
+
+}

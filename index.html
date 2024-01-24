@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fms</title>
+  <link rel="stylesheet" href="fact.css">
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      margin: 0%;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    input[type=text] {
+      padding: 5px;
+      border: 2px solid #cccccc;
+      -webkit-border-radius: 5px;
+      border-radius: 5px;
+    }
+
+    input[type=text]:focus {
+      border-color: black;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" align="center">
+    <h1 align="center" style="color: bisque;">
+      SSSV RICE MILL</h1>
+    <h3 align="center" style="color: bisque;">
+      JUVVIGUDEM</h3>
+    <p id="demo" style="color: bisque;"></p>
+
+    <script>
+      const d = new Date();
+      document.getElementById("demo").innerHTML = d;
+
+      function passvalue() {
+        var rate = document.getElementById("rate").value;
+        var sno = document.getElementById("sno").value;
+        var vlg = document.getElementById("vlg").value;
+        var name = document.getElementById("name").value;
+        var gwgt = document.getElementById("gwgt").value;
+        var Commission = document.getElementById("Commission").value;
+        localStorage.setItem("rate", rate);
+        localStorage.setItem("sno", sno);
+        localStorage.setItem("vlg", vlg);
+        localStorage.setItem("name", name);
+        localStorage.setItem("gwgt", gwgt);
+        localStorage.setItem("Commission", Commission);
+        console.log(rate, sno, vlg, name, gwgt, Commission);
+      }
+    </script>
+   
+    <br><br>
+    <form action="display.html">
+
+      <label for="sno" style="color: bisque; position: absolute; right:300px">RATE:</label>
+      <input type="text" id="rate" style="position: absolute; right:100px">
+      <label for="sno" style="color: bisque;  position: absolute; left:150px">sno:</label>
+      <input type="text" id="sno" style="position: absolute; left:200px"><br><br>
+      <label for="branch" style="color: bisque;">Village Name:</label>
+      <input type="text" id="vlg"><br><br>
+      <label for="fname" style="color: bisque;">Farmer Name:</label>
+      <input type="text" id="name"><br><br>
+
+      <label for="branch" style="color: bisque;">Gross Weight:</label>
+      <input type="text" id="gwgt"><br><br>
+      <label for="branch" style="color: bisque;">Commission:</label>
+      <input type="text" id="Commission"><br><br>
+      <a><button type="submit" id="addbtn" onclick="passvalue()">SAVE & PRINT</button><br><br></a><br>
+
+      
+
+      <p id="cont"></p>
+    </form>
+  </div>
+</body>
+
+</html>
